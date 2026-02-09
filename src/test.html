@@ -13,6 +13,8 @@
         --sub: #475569;
         --accent: #2563eb;
         --border: #e5e7eb;
+        --tag-bg: #eef2ff;
+        --tag-text: #3730a3;
       }
 
       * {
@@ -30,65 +32,84 @@
       }
 
       a {
-        color: var(--accent);
         text-decoration: none;
-        font-weight: 500;
-      }
-
-      a:hover {
-        text-decoration: underline;
+        color: inherit;
       }
 
       .container {
-        max-width: 1040px;
+        max-width: 1100px;
         margin: 0 auto;
         padding: 72px 20px;
       }
 
-      /* Hero */
+      /* ===== HERO ===== */
       .hero {
-        margin-bottom: 96px;
+        margin-bottom: 120px;
       }
 
       .hero h1 {
         font-size: 3rem;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
         letter-spacing: -0.02em;
       }
 
       .hero p {
         font-size: 1.25rem;
         color: var(--sub);
-        max-width: 680px;
+        max-width: 720px;
       }
 
-      /* Section */
+      .hero-tags {
+        margin-top: 28px;
+      }
+
+      .hero-tags span {
+        display: inline-block;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        padding: 6px 14px;
+        font-size: 0.85rem;
+        border-radius: 999px;
+        background: var(--tag-bg);
+        color: var(--tag-text);
+        font-weight: 500;
+      }
+
+      .hero-statement {
+        margin-top: 32px;
+        font-size: 1.05rem;
+        color: var(--sub);
+        font-style: italic;
+      }
+
       section {
-        margin-bottom: 96px;
+        margin-bottom: 100px;
       }
 
       section h2 {
         font-size: 1.9rem;
-        margin-bottom: 28px;
-        letter-spacing: -0.01em;
+        margin-bottom: 32px;
       }
 
-      /* About */
-      .about p {
-        max-width: 760px;
-        font-size: 1.05rem;
-      }
-
-      .about strong {
-        color: var(--accent);
-        font-weight: 600;
-      }
-
-      /* Projects */
+      /* ===== PROJECTS ===== */
       .projects {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 28px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+
+      @media (max-width: 768px) {
+        .projects {
+          grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .hero p {
+          font-size: 1.1rem;
+        }
       }
 
       .project-card {
@@ -96,9 +117,6 @@
         border: 1px solid var(--border);
         border-radius: 16px;
         padding: 28px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         transition:
           transform 0.25s ease,
           box-shadow 0.25s ease;
@@ -106,24 +124,56 @@
 
       .project-card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
+      }
+
+      .project-thumb {
+        width: 100%;
+        height: 140px;
+        margin-bottom: 16px;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #e5e7eb;
+      }
+
+      .project-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       .project-card h3 {
-        margin-top: 0;
-        margin-bottom: 10px;
-        font-size: 1.25rem;
+        margin: 0 0 6px;
+        font-size: 1.3rem;
       }
 
-      .project-card p {
-        color: var(--sub);
+      .project-summary {
         font-size: 0.95rem;
+        color: var(--sub);
+      }
+
+      .project-meta {
+        margin-top: 12px;
+        font-size: 0.85rem;
+        color: var(--sub);
+      }
+
+      .project-meta span {
+        display: block;
+      }
+
+      .project-desc {
+        margin: 18px 0 0;
+        padding-left: 18px;
+        font-size: 0.95rem;
+      }
+
+      .project-desc li {
+        margin-bottom: 6px;
       }
 
       .project-role {
-        margin-top: 16px;
-        font-size: 0.95rem;
-        color: var(--text);
+        margin-top: 18px;
       }
 
       .project-role span {
@@ -132,22 +182,16 @@
         margin-top: 6px;
         padding: 4px 10px;
         border-radius: 999px;
-        background: #eef2ff;
-        color: #3730a3;
+        background: #f1f5f9;
+        color: #334155;
         font-size: 0.8rem;
       }
 
-      .project-links {
-        margin-top: 20px;
-      }
-
-      /* Highlight */
       .highlight {
         border: 2px solid var(--accent);
         background: linear-gradient(180deg, #ffffff 0%, #f0f6ff 100%);
       }
 
-      /* Footer */
       footer {
         margin-top: 140px;
         padding-top: 40px;
@@ -155,26 +199,11 @@
         color: var(--sub);
         font-size: 0.9rem;
       }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .hero h1 {
-          font-size: 2.2rem;
-        }
-
-        .hero p {
-          font-size: 1.1rem;
-        }
-
-        section {
-          margin-bottom: 72px;
-        }
-      }
     </style>
   </head>
   <body>
     <div class="container">
-      <!-- Hero -->
+      <!-- HERO -->
       <div class="hero">
         <h1>김OO</h1>
         <p>
@@ -182,92 +211,80 @@
           사용자 관점에서 문제를 정의하고,<br />
           구조와 흐름을 통해 해결하는 웹 서비스를 기획합니다.
         </p>
+
+        <div class="hero-tags">
+          <span>#서비스기획</span>
+          <span>#UX설계</span>
+          <span>#IA</span>
+          <span>#UserFlow</span>
+          <span>#운영관점</span>
+        </div>
+
+        <p class="hero-statement">“화면이 아닌 서비스의 흐름과 정책을 설계합니다.”</p>
       </div>
 
-      <!-- About -->
-      <section class="about">
-        <h2>About</h2>
-        <p>
-          퍼블리셔 실무 경험을 기반으로, 화면 구현에 그치지 않고
-          <strong>정보 구조(IA), 사용자 흐름(User Flow), 기능 정의 및 정책 설계</strong>를 중심으로
-          웹 서비스를 기획해 왔습니다.<br /><br />
-          실제 운영 중인 서비스와 개인 프로젝트를 통해 기획 → 구현 → 사용자 반응을 직접 경험했으며,
-          사용자가 자연스럽게 이해하고 사용할 수 있는 서비스 구조를 만드는 데 집중하고 있습니다.
-        </p>
-      </section>
-
-      <!-- Projects -->
+      <!-- PROJECTS -->
       <section>
         <h2>Projects</h2>
 
         <div class="projects">
-          <div class="project-card">
-            <div>
-              <h3>운영 중인 서비스 A</h3>
-              <p>실제 사용자 대상 웹 서비스</p>
-
-              <div class="project-role">
-                <span>IA 설계</span>
-                <span>User Flow</span>
-                <span>기능 정의</span>
-              </div>
+          <!-- 영재피엔피 -->
+          <a class="project-card" href="#" target="_blank">
+            <div class="project-thumb">
+              <img src="youngjae-pnp.png" alt="영재피엔피 메인 화면" />
             </div>
 
-            <div class="project-links">
-              <a href="#" target="_blank">서비스 바로가기 →</a>
-            </div>
-          </div>
+            <h3>영재피엔피</h3>
+            <p class="project-summary">기업 패키지 제작 웹사이트</p>
 
-          <div class="project-card">
-            <div>
-              <h3>운영 중인 서비스 B</h3>
-              <p>콘텐츠 중심 웹 플랫폼</p>
-
-              <div class="project-role">
-                <span>UX 개선</span>
-                <span>화면 구조</span>
-                <span>정책 정리</span>
-              </div>
+            <div class="project-meta">
+              <span>참여 인원: 1명</span>
+              <span>기간: YYYY.MM ~ YYYY.MM</span>
             </div>
 
-            <div class="project-links">
-              <a href="#" target="_blank">서비스 바로가기 →</a>
+            <ul class="project-desc">
+              <li>기업 신뢰도를 강조한 원페이지 서비스 구조 기획</li>
+              <li>스크롤 기반 사용자 흐름 설계</li>
+              <li>플러그인 없이 인터랙션 직접 구현</li>
+              <li>콘텐츠 구간별 정보 우선순위 정의</li>
+            </ul>
+
+            <div class="project-role">
+              <span>#서비스기획</span>
+              <span>#UX흐름</span>
+              <span>#원페이지</span>
+              <span>#직접구현</span>
             </div>
-          </div>
+          </a>
 
-          <div class="project-card">
-            <div>
-              <h3>운영 중인 서비스 C</h3>
-              <p>반응형 웹 서비스</p>
-
-              <div class="project-role">
-                <span>동선 설계</span>
-                <span>반응형 기획</span>
-              </div>
-            </div>
-
-            <div class="project-links">
-              <a href="#" target="_blank">서비스 바로가기 →</a>
-            </div>
-          </div>
-
-          <div class="project-card highlight">
-            <div>
-              <h3>ZooSik</h3>
-              <p>주식 가상거래 웹 서비스</p>
-
-              <div class="project-role">
-                <span>서비스 기획</span>
-                <span>비로그인 UX</span>
-                <span>매수·매도 로직</span>
-                <span>상태 관리</span>
-              </div>
+          <!-- ZooSik -->
+          <a class="project-card highlight" href="https://zoosik-wmuu.vercel.app/" target="_blank">
+            <div class="project-thumb">
+              <img src="youngjae-pnp.png" alt="ZooSik 서비스 화면" />
             </div>
 
-            <div class="project-links">
-              <a href="#" target="_blank">서비스 바로가기 →</a>
+            <h3>ZooSik</h3>
+            <p class="project-summary">주식 가상거래 웹 서비스 (개인 프로젝트)</p>
+
+            <div class="project-meta">
+              <span>참여 인원: 1명</span>
+              <span>기간: 2025.05 ~ 2026.02</span>
             </div>
-          </div>
+
+            <ul class="project-desc">
+              <li>서비스 컨셉 정의 및 핵심 사용자 시나리오 기획</li>
+              <li>비로그인/로그인 UX 정책 설계</li>
+              <li>매수·매도 기능 흐름 및 데이터 구조 정의</li>
+              <li>실제 배포를 통한 서비스 검증</li>
+            </ul>
+
+            <div class="project-role">
+              <span>#서비스기획</span>
+              <span>#UX정책</span>
+              <span>#기능정의</span>
+              <span>#실제배포</span>
+            </div>
+          </a>
         </div>
       </section>
 
