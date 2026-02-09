@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>테스트 페이지</title>
+  </head>
+  <body>
+    <h1>비동기 테스트</h1>
+    <button id="fetchBtn">데이터 가져오기</button>
+    <p id="loading"></p>
+    <p id="error" style="color: red"></p>
+    <div id="result"></div>
+
+    <script>
+      const btn = document.getElementById('fetchBtn');
+      const loading = document.getElementById('loading');
+      const error = document.getElementById('error');
+      const result = document.getElementById('result');
+
+      btn.addEventListener('click', async () => {
+        // try {
+        //   loading.textContent = '로딩중...';
+        //   error.textContent = '2';
+        //   result.textContent = '3';
+
+        //   const res = await fetch('https://jsonplaceholder.typicode2.com/posts/1');
+        //   if (!res.ok) throw new Error('서버 에러 발생');
+
+        //   const data = await res.json();
+        // } catch (er) {
+        //   error.textContent = '에러_' + er.message;
+        // } finally {
+        //   // loading.textContent = '';
+        // }
+
+        loading.textContent = '로딩중...';
+        error.textContent = '';
+        result.textContent = '';
+
+        fetch('https://jsonplaceholder.typicode2.com/posts/1')
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error('서버 에러 발생');
+            }
+            return res.json(); // ← Promise 반환
+          })
+          .then((data) => {
+            // 성공 시 렌더
+            result.innerHTML = `<h2>${data.title}</h2><p>${data.body}</p>`;
+          })
+          .catch((er) => {
+            // 네트워크 에러/throw 된 에러 처리
+            error.textContent = '에러_' + er.message;
+          })
+          .finally(() => {
+            // 항상 마지막에 실행
+            // loading.textContent = '';
+          });
+      });
+    </script>
+  </body>
+</html>

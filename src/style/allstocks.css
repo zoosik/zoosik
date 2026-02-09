@@ -1,0 +1,14 @@
+.allstocks-container {
+  padding: 1rem;
+}
+
+.allstocks-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.stock-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

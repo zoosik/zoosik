@@ -1,0 +1,70 @@
+.empty-history {
+  margin: 0;
+  padding: 3rem 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: #6b7280; /* gray-500 */
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  background: #f9fafb;
+  border-radius: 16px;
+}
+
+/* 아이콘 느낌 추가 */
+.empty-history::before {
+  content: '📄';
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  opacity: 0.8;
+}
+
+/* ===================
+   거래 내역 카드 리스트
+===================== */
+.card_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card_list li {
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 16px 14px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  text-align: center;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* 종목명 */
+.card_list li strong {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.card_list li p {
+  margin: 0;
+}
+
+/* 날짜 */
+.card_list li div {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #9ca3af;
+}

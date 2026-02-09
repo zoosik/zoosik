@@ -1,0 +1,71 @@
+/* =====================
+   섹션
+===================== */
+.settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 45px;
+}
+
+.settings-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.settings-input {
+  height: 48px;
+  padding: 0 14px;
+  font-size: 15px;
+  margin: 0;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+}
+
+.settings-input:focus {
+  border-color: #3182f6;
+}
+
+/* =====================
+   버튼 공통
+===================== */
+.btn {
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+/* 메인 액션 (저장) */
+.btn.primary {
+  background: #5986c6;
+  color: #ffffff;
+}
+
+/* 일반 액션 (로그아웃) */
+.btn.ghost {
+  background: #e1e4ea;
+  color: #374151;
+}
+
+/* 위험 액션 */
+.btn.danger {
+  background: #fee2e2;
+  color: #b03131;
+}
+
+/* =====================
+   하단 액션 그룹
+===================== */
+.settings-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

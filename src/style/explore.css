@@ -1,0 +1,70 @@
+/* ===============================
+   Explore / Stock List
+================================ */
+.stock-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stock-row {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.stock-row_link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stock-row_left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stock-row_name {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.stock-row_id {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.2;
+}
+
+.stock-row_right {
+  display: flex;
+  align-items: center;
+}
+
+.stock-row_right p {
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.explore_clear {
+  width: 100%;
+  height: 44px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  color: #6b7280;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.explore_clear:active {
+  background: #e5e7eb;
+}
