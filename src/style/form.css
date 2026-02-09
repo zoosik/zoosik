@@ -15,6 +15,7 @@ input {
   margin: 1rem 0;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
+  font-size: 16px;
 }
 button {
   width: 100%;
