@@ -318,7 +318,7 @@ function App() {
   useEffect(() => {
     if (!user?.uid) return;
 
-    const INTERVAL_MS = 5 * 1000;
+    const INTERVAL_MS = 10 * 1000;
     const id = setInterval(() => {
       // 현재 메모리에 있는 stocks를 그대로 저장
       savePricesToFirestore(user.uid, current_stocks.current);
